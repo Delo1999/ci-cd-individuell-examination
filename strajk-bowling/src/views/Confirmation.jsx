@@ -55,7 +55,12 @@ function Confirmation() {
           </button>
         </form>
       ) : (
-        <h2 className="confirmation__no-booking">Inga bokning gjord!</h2>
+        <h2
+          className="confirmation__no-booking"
+          data-testid="no-booking-message"
+        >
+          Inga bokning gjord!
+        </h2>
       )}
     </section>
   );

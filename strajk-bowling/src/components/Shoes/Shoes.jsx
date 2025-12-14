@@ -16,11 +16,13 @@ function Shoes({ updateSize, addShoe, removeShoe, shoes }) {
           handleChange={updateSize}
           maxLength={2}
         />
+        {/* data-testid added for testing: needed to find and click remove shoe buttons for each player */}
         <button
           className="shoes__button shoes__button--small"
           onClick={() => {
             removeShoe(input.id);
           }}
+          data-testid={`remove-shoe-${index}`}
         >
           -
         </button>
@@ -36,11 +38,13 @@ function Shoes({ updateSize, addShoe, removeShoe, shoes }) {
         <h2 className="shoes__heading">Shoes</h2>
       </header>
       {shoeComps}
+      {/* data-testid added for testing: needed to find and click the add shoe button */}
       <button
         className="shoes__button"
         onClick={() => {
           addShoe(nanoid());
         }}
+        data-testid="add-shoe-button"
       >
         +
       </button>
